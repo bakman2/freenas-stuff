@@ -82,8 +82,8 @@ to autostart this script:
 
 add these lines:
 
-   #tunnel
-   tunnel_enable="YES"
+     #tunnel
+     tunnel_enable="YES"
 
 
 

@@ -1,6 +1,5 @@
-# freenas-stuff
+# FreeNAS - OpenVPN autologin on jailhost
 
-# freenas-stuff
 I needed to setup a vpn tunnel at boot which mounts remote filesystems. Unfortunately, in Freenas, you cannot 
 automatically login a openvpn connection (no auth possible) on the jailhost and you cannot install 
 (ports-)software. A workaround is to install "expect" in a jail and copy the required files to the jail host. 

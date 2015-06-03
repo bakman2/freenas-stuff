@@ -6,8 +6,9 @@ automatically login a openvpn connection (no auth possible) on the jailhost and 
 When done, the login can be automated with a script (expect/sh).
 
 make (or in) a jail
-ssh to the jail
-pkg install expect
+
+     ssh to the jail
+     pkg install expect
 
 note: "tempdir" in the next steps should be reachable/available for the jail host.
 
@@ -49,6 +50,7 @@ now a script can be used to automatically login openvpn
     ...perform other actions
 
 quit vi
+
 to autostart this script:
 
     vi /conf/base/etc/rc.d/tunnel

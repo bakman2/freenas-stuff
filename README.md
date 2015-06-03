@@ -41,14 +41,15 @@ now a script can be used to automatically login openvpn
     sleep 1
     match_max 100000
     expect -exact "sername:"
-    send -- "username\r"
+    send -- "<username>\r"
     expect -exact "assword:"
-    send -- "password\r"
+    send -- "<password>\r"
     expect eof
     EOD
 
     ...perform other actions
 
+quit vi
 to autostart this script:
 
     vi /conf/base/etc/rc.d/tunnel
@@ -74,11 +75,13 @@ to autostart this script:
     load_rc_config $name
     run_rc_command "$1"
 
-- 
+quit vi
+ 
     chmod 555 tunnel
     cp tunnel /etc/rc.d/
 
--
+add the file to rc.conf
+
     vi /conf/base/etc/rc.conf
 
 add these lines:
@@ -86,6 +89,12 @@ add these lines:
      #tunnel
      tunnel_enable="YES"
 
+quit vi
+
+     cp /conf/base/etc/rc.conf /etc/
+
+Reboot and the tunnel should initiate at boot
+ 
 
 
 

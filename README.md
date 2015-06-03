@@ -74,10 +74,11 @@ to autostart this script:
     load_rc_config $name
     run_rc_command "$1"
 
+- 
     chmod 555 tunnel
     cp tunnel /etc/rc.d/
 
-
+-
     vi /conf/base/etc/rc.conf
 
 add these lines:

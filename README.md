@@ -1,11 +1,11 @@
-# FreeNAS - OpenVPN autologin on jailhost
+# FreeNAS - OpenVPN autologin outside the jail
 
 I needed to setup a vpn tunnel at boot which mounts remote filesystems. Unfortunately, in Freenas, you cannot 
-automatically login a openvpn connection (no auth possible) on the jailhost and you cannot install 
-(ports-)software. A workaround is to install "expect" in a jail and copy the required files to the jail host. 
+automatically login a openvpn connection (no auth possible) on the host (outside jails) and you cannot install 
+(ports-)software. A workaround is to install "expect" in a jail and copy the required files to the host. 
 When done, the login can be automated with a script (expect/sh).
 
-make (or in) a jail
+make (or in) a jail:
 
      ssh to the jail
      pkg install expect
@@ -18,7 +18,7 @@ note: "tempdir" in the next steps should be reachable/available for the jail hos
     cp /usr/local/lib/libtcl86.so.1 /mnt/tempdir/ 
     cp -r /usr/local/lib/tcl8.6 /mnt/tempdir/ 
 
-on jail host:
+on host:
 
     cp /mnt/tempdir/libexpect545.so /usr/local/lib/expect5.45/libexpect545.so
     cp /mnt/tempdir/libtcl86.so.1 /usr/local/lib/libtcl86.so.1
